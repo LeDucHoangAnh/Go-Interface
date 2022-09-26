@@ -23,6 +23,12 @@ type Movement interface {
 	move()
 }
 
+//Embed interface
+type NextAnimal interface {
+	Movement
+	Animal
+}
+
 func main() {
 	// var animal Animal
 
@@ -32,8 +38,11 @@ func main() {
 
 	dog := Dog{}
 
-	var m Movement = dog
-	m.move()
-	var a Animal = dog
-	a.speak()
+	// var m Movement = dog
+	// m.move()
+	// var a Animal = dog
+	// a.speak()
+	var na NextAnimal = dog
+	na.speak()
+	na.move()
 }
