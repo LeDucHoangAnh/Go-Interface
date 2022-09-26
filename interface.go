@@ -29,6 +29,15 @@ type NextAnimal interface {
 	Animal
 }
 
+//Empty interface
+func goout(i interface{}) {
+	fmt.Println(i)
+}
+
+type data struct {
+	index int
+}
+
 func main() {
 	// var animal Animal
 
@@ -45,4 +54,10 @@ func main() {
 	var na NextAnimal = dog
 	na.speak()
 	na.move()
+
+	goout(10)
+	goout(10.15)
+
+	data := data{1002}
+	goout(data)
 }
