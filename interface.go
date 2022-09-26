@@ -10,11 +10,11 @@ type Animal interface {
 type Dog struct {
 }
 
-func (d Dog) speak() {
+func (d *Dog) speak() {
 	fmt.Println("woaw woaw")
 }
 
-func (d Dog) move() {
+func (d *Dog) move() {
 	fmt.Println("4 chân")
 }
 
@@ -51,7 +51,7 @@ func main() {
 	// m.move()
 	// var a Animal = dog
 	// a.speak()
-	var na NextAnimal = dog
+	var na NextAnimal = &dog
 	na.speak()
 	na.move()
 
