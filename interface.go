@@ -14,10 +14,26 @@ func (d Dog) speak() {
 	fmt.Println("woaw woaw")
 }
 
+func (d Dog) move() {
+	fmt.Println("4 chân")
+}
+
+//multiple interface
+type Movement interface {
+	move()
+}
+
 func main() {
-	var animal Animal
+	// var animal Animal
 
-	animal = Dog{}
+	// animal = Dog{}
 
-	animal.speak()
+	// animal.speak()
+
+	dog := Dog{}
+
+	var m Movement = dog
+	m.move()
+	var a Animal = dog
+	a.speak()
 }
